@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "1022720436043",
+    "firebase_url": "https://notification-system-ac422-default-rtdb.firebaseio.com",
+    "project_id": "notification-system-ac422",
+    "storage_bucket": "notification-system-ac422.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1022720436043:android:baf88385d95cdc7d752ace",
+        "android_client_info": {
+          "package_name": "com.UoITC.notificationsystem_mobile"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1022720436043-meuc6hgv929604u0dk363eg0d1701d60.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.UoITC.notificationsystem_mobile",
+            "certificate_hash": "d4c91e8f7de8df18caf2f9a4a82d15872914273a"
+          }
+        },
+        {
+          "client_id": "1022720436043-9nj0vtto1081arh8qi7h94eoc3ek3nnu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT_qseyIRDh6qyJTMuEiutjlexeuxIyMg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1022720436043-4rioa4h5tn7j2564t0v6j8h1jh73vdas.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
