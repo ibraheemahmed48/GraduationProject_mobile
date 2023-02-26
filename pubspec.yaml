@@ -57,6 +57,11 @@ dependencies:
   url_launcher: ^6.1.10
   loading_animation_widget: ^1.2.0+4
   flutter_snake_navigationbar: ^0.6.1
+  image_gallery_saver: ^1.7.1
+  permission_handler: ^10.2.0
+  dio: ^5.0.1
+  fluttertoast: ^8.2.1
+  photo_view: ^0.14.0
 
 
 dev_dependencies:
