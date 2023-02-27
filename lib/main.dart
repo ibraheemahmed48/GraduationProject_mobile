@@ -5,16 +5,20 @@ import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:notificationsystem_mobile/test2.dart';
 
 import 'View/home_page.dart';
+import 'controler/method.dart';
 import 'help/Colors.dart';
 import 'test.dart';
 
 main() async {
+
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colorsapp.mainColor, // navigation bar color
     statusBarColor: Colorsapp.mainColor, // status bar color
   ));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+ await Methods.requestPermission();
+
   runApp(const MyApp());
 }
 
