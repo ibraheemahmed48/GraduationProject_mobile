@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:notificationsystem_mobile/test2.dart';
 
+import 'View/Splash.dart';
 import 'View/home_page.dart';
 import 'controler/method.dart';
 import 'help/Colors.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
 
         debugShowCheckedModeBanner: false,
 
-        home: HomePage()
+        home: Splash()
     );
   }
 }
