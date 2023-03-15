@@ -64,6 +64,7 @@ dependencies:
   photo_view: ^0.14.0
   top_snackbar_flutter: ^3.0.0+1
   another_flushbar: ^1.12.29
+  flutter_email_sender: ^5.2.0
 
 
 
