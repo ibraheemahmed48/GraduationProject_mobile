@@ -44,7 +44,6 @@ main() async {
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
 
-  await Methods.requestPermission();
 
 
   // FirebaseMessaging messaging = FirebaseMessaging.instance;

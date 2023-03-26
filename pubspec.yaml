@@ -65,6 +65,8 @@ dependencies:
   top_snackbar_flutter: ^3.0.0+1
   another_flushbar: ^1.12.29
   flutter_email_sender: ^5.2.0
+  connectivity_plus: ^3.0.3
+  flutter_cache_manager: ^3.3.0
 
 
 

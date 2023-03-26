@@ -1,0 +1,1 @@
+class Account{   static String name ="";   static String email= "";   static String stage= "";}
