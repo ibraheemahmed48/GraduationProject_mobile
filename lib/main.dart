@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
@@ -32,13 +33,16 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 
 main() async {
   print("//////////////main//////////////////////");
-
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colorsapp.mainColor, // navigation bar color
     statusBarColor: Colorsapp.mainColor, // status bar color
   ));
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
+  await FirebaseFirestore.instance.settings.persistenceEnabled;
+  // Enable offline persistence
+
+   print(Methods.newsList1);
   await FirebaseMessaging.instance.setAutoInitEnabled(true);
   FirebaseMessagingService.configureFirebaseMessaging();
 
@@ -64,7 +68,8 @@ class MyApp extends StatelessWidget {
 
         debugShowCheckedModeBanner: false,
 
-        home: Sqltest()
+        home: Splash(),
+
     );
   }
 }
