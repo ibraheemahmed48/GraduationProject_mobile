@@ -6,25 +6,28 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'FirebaseMessagingService/FirebaseMessagingService.dart';
-import 'View/Login_page/login_main_page.dart';
 import 'View/Splash.dart';
-import 'View/home_page.dart';
+import 'controler/auth/Account.dart';
 import 'controler/auth/auth.dart';
 import 'controler/method.dart';
 import 'help/Colors.dart';
+
+@pragma('vm:entry-point')
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   // If you're going to use other Firebase services in the background, such as Firestore,
   // make sure you call `initializeApp` before using other Firebase services.
-  print('//////////////////////background////////////////////////////////');
-  FirebaseMessaging.onMessageOpenedApp.listen((RemoteMessage message) {
-    if (message.notification !=null) {
-      print('Received news message inqaaaabackground: ${message.notification?.title}');
-    }
-  });
+  await Firebase.initializeApp();
+  await FirebaseMessaging.instance.setAutoInitEnabled(true);
+  FirebaseMessaging.instance.setDeliveryMetricsExportToBigQuery(true);
+  await UserPreferences.getAccount1();
 
+  await Methods.reversedtime(
+      oldtime: message.data["time"],
+      studentName: Account.name,
+      stage: Account.stage,
+      title: message.notification!.body!);
 
-  print('Message title: ${message.notification?.title}');
-  print('Message body: ${message.notification?.body}');
+  print("Handling a background message: ${message.messageId}");
 }
 main() async {
   print("//////////////main//////////////////////");
@@ -36,16 +39,8 @@ main() async {
   await Firebase.initializeApp();
   await FirebaseFirestore.instance.settings.persistenceEnabled;
 
-
-  await FirebaseMessaging.instance.setAutoInitEnabled(true);
   FirebaseMessagingService.configureFirebaseMessaging();
-
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
-
-
-
-
-
 
   runApp(const MyApp());
 }
@@ -61,9 +56,7 @@ class MyApp extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return const GetMaterialApp(
-
         debugShowCheckedModeBanner: false,
-
         home: Splash(),
 
     );
