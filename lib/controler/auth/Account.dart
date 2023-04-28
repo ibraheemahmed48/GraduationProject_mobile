@@ -1,1 +1,1 @@
-class Account{   static String name ="";   static String email= "";   static String stage= "";   static String documentID= "";   static String? userImageUrl= "";}
+class Account{   static String name ="";   static String email= "";   static String stage= "";   static String documentID= "";   static String? userImageUrl= "";   static String? topicstage= "";}

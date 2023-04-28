@@ -31,13 +31,16 @@ Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
 }
 main() async {
   print("//////////////main//////////////////////");
+  WidgetsFlutterBinding.ensureInitialized();
+
+  SystemChrome.setPreferredOrientations(
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   SystemChrome.setSystemUIOverlayStyle(SystemUiOverlayStyle(
     systemNavigationBarColor: Colorsapp.mainColor, // navigation bar color
     statusBarColor: Colorsapp.mainColor, // status bar color
   ));
-  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-  await FirebaseFirestore.instance.settings.persistenceEnabled;
+  FirebaseFirestore.instance.settings.persistenceEnabled;
 
   FirebaseMessagingService.configureFirebaseMessaging();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
